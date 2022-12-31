@@ -4,66 +4,91 @@ using UnityEngine;
 
 public class PlayerSlide : MonoBehaviour
 {
-    // The threshold angle for determining whether the player is on a slope
-    public float slopeLimit = 45f;
+    // The player's movement script
+    public PlayerMovement playerMovement;
 
-    // The player's current velocity
-    private Vector3 velocity;
+    // The force to apply when sliding
+    public float slideForce = 10f;
 
-    // The player's current movement direction
-    private Vector3 direction;
+    // The maximum speed the player can slide at
+    public float maxSlideSpeed = 5f;
 
-    // A reference to the player's Rigidbody component
+    // The slope angle threshold for sliding faster
+    public float slopeSlideThreshold = 45f;
+
+    // The slope slide speed multiplier
+    public float slopeSlideMultiplier = 2f;
+
+    // A layer mask for the ground layer
+    public LayerMask groundLayer;
+
+    // The player's rigidbody
     private Rigidbody rb;
 
     void Start()
     {
-        // Get the player's Rigidbody component
+        playerMovement = GetComponent<PlayerMovement>();
         rb = GetComponent<Rigidbody>();
     }
 
     void Update()
     {
-        // Get the player's current velocity and direction
-        velocity = rb.velocity;
-        direction = velocity.normalized;
-
-        // Check if the player is on a slope
-        if (IsOnSlope())
+        // Check if the player is pressing the left control key
+        if (Input.GetKey(KeyCode.LeftControl))
         {
-            // If the player is on a slope, apply a sliding force
-            ApplySlidingForce();
+            // Calculate the slide direction based on the player's current velocity and the ground normal
+            Vector3 slideDirection = Vector3.ProjectOnPlane(rb.velocity, playerMovement.groundNormal);
+
+            // Calculate the slide force based on the slope angle
+            float slideMultiplier = 1f;
+            if (Vector3.Angle(playerMovement.groundNormal, Vector3.up) > slopeSlideThreshold)
+            {
+                slideMultiplier = slopeSlideMultiplier;
+            }
+
+            // If the player is on the ground, apply the slide force
+            if (IsOnGround())
+            {
+                rb.AddForce(slideDirection * slideForce * slideMultiplier, ForceMode.Acceleration);
+            }
+            // Otherwise, apply a reduced slide force
+            else
+            {
+                rb.AddForce(slideDirection * slideForce * 0.5f * slideMultiplier, ForceMode.Acceleration);
+            }
+
+            // Clamp the player's velocity to the maximum slide speed
+            rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSlideSpeed);
         }
     }
 
-    // Returns true if the player is on a slope, false otherwise
-    bool IsOnSlope()
-    {
-        // Cast a ray downward from the player's position
-        Ray ray = new Ray(transform.position, -transform.up);
-        RaycastHit hit;
+    // Check if the player is on the ground or on a slope
+bool IsOnGround()
+{
+    // Cast a sphere downward from the center of the player's feet
+    float sphereRadius = 0.4f;
+    Vector3 sphereCenter = transform.position + Vector3.down * sphereRadius;
+    Collider[] colliders = Physics.OverlapSphere(sphereCenter, sphereRadius, groundLayer);
 
-        // If the ray hits a collider
-        if (Physics.Raycast(ray, out hit))
+    // If there are colliders within the sphere, check the slope angle
+    if (colliders.Length > 0)
+    {
+        // Check the angle between the collider normal and the up vector
+        float angle = Vector3.Angle(colliders[0].transform.up, Vector3.up);
+        if (angle <= slopeSlideThreshold)
         {
-            // Get the slope angle
-            float angle = Vector3.Angle(hit.normal, transform.up);
-
-            // Return true if the slope angle is greater than the threshold
-            return angle > slopeLimit;
+            // The player is on the ground
+            return true;
         }
-
-        return false;
+        else
+        {
+            // The player is on a slope
+            return true;
+        }
     }
-
-    // Applies a sliding force to the player
-    void ApplySlidingForce()
-    {
-        // Calculate the sliding force
-        Vector3 slide = new Vector3(direction.x, -1f, direction.z);
-        slide *= rb.mass;
-
-        // Apply the sliding force to the player
-        rb.AddForce(slide, ForceMode.Impulse);
-    }
+    return false;
 }
+
+
+}
+

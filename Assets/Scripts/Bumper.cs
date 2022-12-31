@@ -9,15 +9,16 @@ public class Bumper : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.gameObject.name);
-        var rb = other.GetComponent<Rigidbody>();
-        if (null == rb)
+        if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            return;
+            var rb = other.GetComponent<Rigidbody>();
+            if (null == rb)
+            {
+                return;
+            }
+
+            rb.AddForce(Vector3.up * bumpForce, ForceMode.VelocityChange);
+
         }
-        
-        rb.AddForce(Vector3.up * bumpForce, ForceMode.VelocityChange);
-        
-       
     }
 }
