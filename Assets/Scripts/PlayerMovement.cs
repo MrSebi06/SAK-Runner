@@ -68,15 +68,9 @@ public class PlayerMovement : MonoBehaviour
 
         // Cast a ray down from the player's position to check for the ground normal
         Ray ray = new Ray(transform.position, Vector3.down);
-        if (Physics.Raycast(ray, out RaycastHit hit, playerHeight * 0.5f + 0.2f, groundLayer))
-        {
+        if (Physics.Raycast(ray, out RaycastHit hit, 2, groundLayer))
+        {	
             groundNormal = hit.normal;
-
-			 // Print the name of the game object that was hit by the raycast
-        Debug.Log("Object hit by raycast: " + hit.collider.gameObject.name);
-
-			// Print the ground normal to the console
-            Debug.Log("Ground normal: " + groundNormal);
         }
     }
     else
@@ -104,7 +98,8 @@ public class PlayerMovement : MonoBehaviour
     {
         // Check if the player is on a slope
         float slopeAngle = Vector3.Angle(groundNormal, Vector3.up);
-        if (slopeAngle > 45f)
+		Debug.Log("Angle: " + slopeAngle);
+        if (slopeAngle > 10f)
         {
             // Apply the slide velocity when sliding along a slope
             moveVector = groundNormal * _slideVelocity;
