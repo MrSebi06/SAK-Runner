@@ -461,7 +461,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerBody: {fileID: 535362935}
   groundNormal: {x: 0, y: 1, z: 0}
-  _slideVelocity: 200
+  _slideVelocity: 10
   moveSpeed: 7
   groundDrag: 8
   jumpForce: 5
@@ -1106,6 +1106,10 @@ PrefabInstance:
     - target: {fileID: 8356323207240688731, guid: 6ce794b997fbe964d913fd610eef6ae1, type: 3}
       propertyPath: m_Drag
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8356323207240688731, guid: 6ce794b997fbe964d913fd610eef6ae1, type: 3}
+      propertyPath: m_Mass
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8356323207240688731, guid: 6ce794b997fbe964d913fd610eef6ae1, type: 3}
       propertyPath: m_AngularDrag

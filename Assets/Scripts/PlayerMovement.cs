@@ -98,9 +98,16 @@ public class PlayerMovement : MonoBehaviour
     {
         // Check if the player is on a slope
         float slopeAngle = Vector3.Angle(groundNormal, Vector3.up);
-		Debug.Log("Angle: " + slopeAngle);
         if (slopeAngle > 10f)
         {
+            // Cast a ray from the player's position towards the ground
+            Ray ray = new Ray(transform.position, Vector3.down);
+            if (Physics.Raycast(ray, out RaycastHit hit, 10000, groundLayer))
+            {
+                // Set the position of the player to the ground position
+                transform.position = hit.point;
+            }
+
             // Apply the slide velocity when sliding along a slope
             moveVector = groundNormal * _slideVelocity;
         }
@@ -116,6 +123,8 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Apply movement by changing rigidBody velocity
+
+
     playerBody.velocity = new Vector3(moveVector.x, playerBody.velocity.y, moveVector.z);
 }
 
