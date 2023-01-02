@@ -91,6 +91,7 @@ public class PlayerMovement : MonoBehaviour
 
  private void MovePlayer()
 {
+//Time.fixedDeltaTime = 0.005f;
     // Movement direction
     Vector3 moveVector = transform.TransformDirection(_playerMovementInput) * moveSpeed;
 
@@ -100,12 +101,15 @@ public class PlayerMovement : MonoBehaviour
         float slopeAngle = Vector3.Angle(groundNormal, Vector3.up);
         if (slopeAngle > 10f)
         {
+            // Make the movement direction conform to the slope
+            moveVector = Vector3.ProjectOnPlane(moveVector, groundNormal);
+
             // Cast a ray from the player's position towards the ground
             Ray ray = new Ray(transform.position, Vector3.down);
-            if (Physics.Raycast(ray, out RaycastHit hit, 10000, groundLayer))
+            if (Physics.Raycast(ray, out RaycastHit hit, 10, groundLayer))
             {
-                // Set the position of the player to the ground position
-                transform.position = hit.point;
+               // Add force to the player to make them slide along the slope
+            playerBody.AddForce(moveVector, ForceMode.VelocityChange);
             }
 
             // Apply the slide velocity when sliding along a slope
@@ -123,10 +127,9 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Apply movement by changing rigidBody velocity
-
-
     playerBody.velocity = new Vector3(moveVector.x, playerBody.velocity.y, moveVector.z);
 }
+
 
 
 
