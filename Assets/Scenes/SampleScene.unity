@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -449,9 +449,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: CubeMedium
       objectReference: {fileID: 0}
+    - target: {fileID: 1727478498705037902, guid: d2fd06e3c278d404585093542841c91d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1727478498705037902, guid: d2fd06e3c278d404585093542841c91d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1727478498705037905, guid: d2fd06e3c278d404585093542841c91d, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1727478498705037905, guid: d2fd06e3c278d404585093542841c91d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1727478498705037905, guid: d2fd06e3c278d404585093542841c91d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1727478498705037905, guid: d2fd06e3c278d404585093542841c91d, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 1727478498705037905, guid: d2fd06e3c278d404585093542841c91d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -493,8 +513,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1727478498705037905, guid: d2fd06e3c278d404585093542841c91d, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2fd06e3c278d404585093542841c91d, type: 3}
+--- !u!1 &1093437126 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8356323207240688728, guid: 6ce794b997fbe964d913fd610eef6ae1, type: 3}
+  m_PrefabInstance: {fileID: 2118978732}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1093437127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1093437126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 917b426b37fb3364bbf931b9977b4f50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Wall_Dist: 4
+  Wallrun_check: 0
+  min_jump: 2
+  Wallrun_Time: 5
+  Wallrun_Velocity: 5
+  wall:
+    serializedVersion: 2
+    m_Bits: 8
+  ground:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!4 &1800654220 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2686078649451597733, guid: c89b4c13b6c281f44bfce6b445d3aabf, type: 3}

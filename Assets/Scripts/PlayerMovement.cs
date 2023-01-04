@@ -8,17 +8,32 @@ public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody playerBody;
 
-    [Header("Movement")] public float moveSpeed;
+    [Header("Movement")] 
+    public float moveSpeed;
     public float groundDrag;
     private Vector3 _playerMovementInput;
 
-    [Header("Jumping")] public float jumpForce;
+    [Header("Jumping")] 
+    public float jumpForce;
     public float airMultiplier;
     private bool _readyToJump;
+    
+    [Header("WallRun")]
+    private float Wallrun_Speed;
+    public enum MovementState
+    {
+        Wallrunning,
+    } 
+    public MovementState state;
+    public bool wallrunning;
+    public bool walking;
+    public bool jumping;
 
-    [Header("Ground Check")] public float playerHeight;
+
+    [Header("Ground Check")] 
+    public float playerHeight;
     public LayerMask groundLayer;
-    private bool _isGrounded;
+    public bool _isGrounded;
 
     private void Update()
     {
@@ -37,7 +52,12 @@ public class PlayerMovement : MonoBehaviour
         // _isGrounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, groundLayer);
         _isGrounded = Physics.CheckBox(new Vector3(transform.position.x, transform.position.y - playerHeight/2, transform.position.z), new Vector3(0.45f, 0.1f, 0.45f), transform.rotation, groundLayer);
 
-        if (_isGrounded)
+        if (wallrunning)
+        {
+            state = MovementState.Wallrunning;
+            // moveSpeed = Wallrun_Speed;
+        }
+        if (_isGrounded )
         {
             playerBody.drag = groundDrag;
         }
@@ -48,7 +68,7 @@ public class PlayerMovement : MonoBehaviour
         
         MovePlayer();
 
-        if (_readyToJump)
+        if (_readyToJump )
         {
             Jump();
             _readyToJump = false;
@@ -60,7 +80,7 @@ public class PlayerMovement : MonoBehaviour
         // Movement direction
         Vector3 moveVector = transform.TransformDirection(_playerMovementInput) * moveSpeed;
 
-        if (!_isGrounded)
+        if (!_isGrounded )
         {
             moveVector *= airMultiplier;
         }
