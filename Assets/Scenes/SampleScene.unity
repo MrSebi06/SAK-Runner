@@ -211,7 +211,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.7, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 535362943}
+  m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &271856383
@@ -578,98 +578,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1727478498705037905, guid: d2fd06e3c278d404585093542841c91d, type: 3}
   m_PrefabInstance: {fileID: 1058987722}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &535362930 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8356323207240688728, guid: 6ce794b997fbe964d913fd610eef6ae1, type: 3}
-  m_PrefabInstance: {fileID: 2118978732}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &535362935 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 8356323207240688731, guid: 6ce794b997fbe964d913fd610eef6ae1, type: 3}
-  m_PrefabInstance: {fileID: 2118978732}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &535362937
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 535362930}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e850913440a5964ea7c447e872be452, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerBody: {fileID: 535362935}
-  groundNormal: {x: 0, y: 1, z: 0}
-  runSpeed: 10
-  _slideVelocity: 20
-  moveSpeed: 7
-  groundDrag: 8
-  jumpForce: 5
-  airMultiplier: 0.7
-  state: 0
-  wallrunning: 0
-  walking: 0
-  jumping: 0
-  playerHeight: 2
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 128
-  _isGrounded: 0
---- !u!114 &535362940
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 535362930}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3624eb2744dcc514ca8b821b1f92f781, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lives: 3
-  livesText: {fileID: 759802348}
---- !u!114 &535362942
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 535362930}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 917b426b37fb3364bbf931b9977b4f50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 708001788}
-  fov: 90
-  wallrun_fov: 110
-  wallrun_fov_time: 10
-  cam_tilt: 20
-  cam_tilt_time: 20
-  tilt: 0
-  walljumpforce_hor: 7
-  walljumpforce_ver: 12
-  Wall_Dist: 1
-  Wallrun_check: 0
-  min_jump: 0
-  Wallrun_Velocity: 200
-  gravity_force: 10
-  Wallrun_Time: 2
-  exit_time: 0.7
-  gravity: 1
-  jump: 32
-  wall:
-    serializedVersion: 2
-    m_Bits: 8
-  _transform: {fileID: 708001791}
---- !u!4 &535362943 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8356323207240688730, guid: 6ce794b997fbe964d913fd610eef6ae1, type: 3}
-  m_PrefabInstance: {fileID: 2118978732}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &670766472
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -824,11 +732,6 @@ Transform:
 --- !u!20 &708001788 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 8356323206641196644, guid: 6ce794b997fbe964d913fd610eef6ae1, type: 3}
-  m_PrefabInstance: {fileID: 2118978732}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &708001791 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8356323206641196643, guid: 6ce794b997fbe964d913fd610eef6ae1, type: 3}
   m_PrefabInstance: {fileID: 2118978732}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &759802347
@@ -1214,6 +1117,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1090511497527859340, guid: 6ce794b997fbe964d913fd610eef6ae1, type: 3}
+      propertyPath: livesText
+      value: 
+      objectReference: {fileID: 759802348}
     - target: {fileID: 8356323206641196642, guid: 6ce794b997fbe964d913fd610eef6ae1, type: 3}
       propertyPath: cam
       value: 
@@ -1225,7 +1132,7 @@ PrefabInstance:
     - target: {fileID: 8356323206641196642, guid: 6ce794b997fbe964d913fd610eef6ae1, type: 3}
       propertyPath: _wallRun
       value: 
-      objectReference: {fileID: 535362942}
+      objectReference: {fileID: 0}
     - target: {fileID: 8356323206641196642, guid: 6ce794b997fbe964d913fd610eef6ae1, type: 3}
       propertyPath: sensitivity
       value: 200
@@ -1314,25 +1221,8 @@ PrefabInstance:
       propertyPath: m_AngularDrag
       value: 0.05
       objectReference: {fileID: 0}
-    - target: {fileID: 8356323207240688733, guid: 6ce794b997fbe964d913fd610eef6ae1, type: 3}
-      propertyPath: sliding
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8356323207240688733, guid: 6ce794b997fbe964d913fd610eef6ae1, type: 3}
-      propertyPath: moveSpeed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8356323207240688733, guid: 6ce794b997fbe964d913fd610eef6ae1, type: 3}
-      propertyPath: maxSlopeAngle
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 8356323207240688733, guid: 6ce794b997fbe964d913fd610eef6ae1, type: 3}
-      propertyPath: slopeIncreaseMultiplier
-      value: 20
-      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8356323206673118001, guid: 6ce794b997fbe964d913fd610eef6ae1, type: 3}
-    - {fileID: 8356323207240688733, guid: 6ce794b997fbe964d913fd610eef6ae1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6ce794b997fbe964d913fd610eef6ae1, type: 3}
 --- !u!1 &2143555493
 GameObject:

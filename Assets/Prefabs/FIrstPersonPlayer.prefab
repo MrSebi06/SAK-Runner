@@ -207,8 +207,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8356323207240688730}
   - component: {fileID: 8356323207240688731}
-  - component: {fileID: 8356323207240688733}
   - component: {fileID: 5666708720321988456}
+  - component: {fileID: 5536242191858524372}
+  - component: {fileID: 1090511497527859340}
+  - component: {fileID: 8292865342761825830}
   m_Layer: 6
   m_Name: FIrstPersonPlayer
   m_TagString: Untagged
@@ -249,35 +251,6 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 112
   m_CollisionDetection: 1
---- !u!114 &8356323207240688733
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8356323207240688728}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e850913440a5964ea7c447e872be452, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerBody: {fileID: 8356323207240688731}
-  groundNormal: {x: 0, y: 1, z: 0}
-  runSpeed: 10
-  _slideVelocity: 0
-  moveSpeed: 7
-  groundDrag: 8
-  jumpForce: 5
-  airMultiplier: 0.7
-  state: 0
-  wallrunning: 0
-  walking: 0
-  jumping: 0
-  playerHeight: 2
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 128
-  _isGrounded: 0
 --- !u!65 &5666708720321988456
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -291,3 +264,80 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 2, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5536242191858524372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8356323207240688728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e850913440a5964ea7c447e872be452, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerBody: {fileID: 8356323207240688731}
+  groundNormal: {x: 0, y: 1, z: 0}
+  runSpeed: 2
+  _slideVelocity: 20
+  moveSpeed: 7
+  groundDrag: 8
+  jumpForce: 5
+  airMultiplier: 0.7
+  state: 0
+  wallrunning: 0
+  walking: 0
+  jumping: 0
+  playerHeight: 2
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  _isGrounded: 0
+--- !u!114 &1090511497527859340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8356323207240688728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3624eb2744dcc514ca8b821b1f92f781, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lives: 3
+  livesText: {fileID: 0}
+--- !u!114 &8292865342761825830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8356323207240688728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 917b426b37fb3364bbf931b9977b4f50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 8356323206641196644}
+  fov: 90
+  wallrun_fov: 110
+  wallrun_fov_time: 10
+  cam_tilt: 20
+  cam_tilt_time: 20
+  tilt: 0
+  walljumpforce_hor: 7
+  walljumpforce_ver: 12
+  Wall_Dist: 1
+  Wallrun_check: 0
+  min_jump: 0
+  Wallrun_Velocity: 200
+  gravity_force: 10
+  Wallrun_Time: 2
+  exit_time: 0.7
+  gravity: 1
+  jump: 32
+  wall:
+    serializedVersion: 2
+    m_Bits: 8
+  _transform: {fileID: 8356323206641196643}
