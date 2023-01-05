@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2222d3d0d220e294dac932c499e28c81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wallRun: {fileID: 0}
+  _wallRun: {fileID: 8292865342761825830}
   sensitivity: 100
   playerBody: {fileID: 8356323207240688730}
 --- !u!1 &8356323206673118026
