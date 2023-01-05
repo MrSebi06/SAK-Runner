@@ -1,8 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -16,17 +13,32 @@ public class PlayerMovement : MonoBehaviour
     public float _slideVelocity;
 	private bool _isSliding;	
 
-    [Header("Movement")] public float moveSpeed;
+    [Header("Movement")] 
+    public float moveSpeed;
     public float groundDrag;
     private Vector3 _playerMovementInput;
 
-    [Header("Jumping")] public float jumpForce;
+    [Header("Jumping")] 
+    public float jumpForce;
     public float airMultiplier;
     private bool _readyToJump;
+    
+    [Header("WallRun")]
+    private float Wallrun_Speed;
+    public enum MovementState
+    {
+        Wallrunning,
+    } 
+    public MovementState state;
+    public bool wallrunning;
+    public bool walking;
+    public bool jumping;
 
-    [Header("Ground Check")] public float playerHeight;
+
+    [Header("Ground Check")] 
+    public float playerHeight;
     public LayerMask groundLayer;
-    private bool _isGrounded;
+    public bool _isGrounded;
 	
 	  void Start()
     {
@@ -38,6 +50,8 @@ public class PlayerMovement : MonoBehaviour
 {
     // Input
     _playerMovementInput = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
+
+     if (wallrunning)state = MovementState.Wallrunning;
 
     if (Input.GetKey(KeyCode.Space) && _isGrounded && !_readyToJump)
     {

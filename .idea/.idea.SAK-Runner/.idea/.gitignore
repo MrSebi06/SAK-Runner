@@ -2,18 +2,10 @@
 /shelf/
 /workspace.xml
 # Rider ignored files
-/contentModel.xml
-/.idea.Scripts.iml
-/projectSettingsUpdater.xml
+/.idea.SAK-Runner.iml
 /modules.xml
-# Default ignored files
-/shelf/
-/workspace.xml
-# Rider ignored files
-/modules.xml
-/contentModel.xml
 /projectSettingsUpdater.xml
-/.idea.Scripts.iml
+/contentModel.xml
 # Editor-based HTTP Client requests
 /httpRequests/
 # Datasource local storage ignored files
