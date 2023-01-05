@@ -8,16 +8,15 @@ using Cache = UnityEngine.Cache;
 public class WallRun : MonoBehaviour
 {
 
-
-    [Header("camera")] 
+    [Header("camera")]
     [SerializeField]private Camera cam;
     [SerializeField]private float fov;
     [SerializeField]private float wallrun_fov;
     [SerializeField]private float wallrun_fov_time;
     [SerializeField]private float cam_tilt;
     [SerializeField]private float cam_tilt_time;
-                    public float tilt;
-    
+    public float tilt;
+
     [Header("detect")]
     [SerializeField]private float walljumpforce_hor;
     [SerializeField]private float walljumpforce_ver;
@@ -53,23 +52,7 @@ public class WallRun : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        pm = GetComponent<PlayerMovement>();
-        // cam = GetComponent<Camera>();
-    }
-    void FOV()
-    {
-        if(pm.wallrunning)
-        {
-         cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, wallrun_fov, wallrun_fov_time * Time.deltaTime);
-            if (WallLeft) tilt = Mathf.Lerp(tilt, -cam_tilt, cam_tilt_time * Time.deltaTime);
-            if (Wallright) tilt = Mathf.Lerp(tilt, cam_tilt, cam_tilt_time * Time.deltaTime);
-        }
-        if(!pm.wallrunning)
-        {
-            tilt = Mathf.Lerp(tilt, 0, cam_tilt_time * Time.deltaTime);
-            cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, fov, wallrun_fov_time * Time.deltaTime);
-        }
-    
+        pm = GetComponent<PlayerMovement>(); 
     }
     void CheckForWall()
     {
@@ -102,12 +85,13 @@ public class WallRun : MonoBehaviour
          pm.wallrunning = true;
          Wallrun_Timer = Wallrun_Time;
          rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+         cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, wallrun_fov, wallrun_fov_time * Time.deltaTime);
      }
      
      void Wallrun_Stop()
      {
          pm.wallrunning = false;
-
+         cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, fov, wallrun_fov_time * Time.deltaTime);
 
      }
      void Wallrun()
@@ -166,7 +150,6 @@ public class WallRun : MonoBehaviour
     {
         CheckForWall();
         state();
-        FOV();
     }
 
     private void FixedUpdate()
