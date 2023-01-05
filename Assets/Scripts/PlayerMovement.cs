@@ -8,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
 	 // The normal of the ground the player is currently on
 	public Vector3 groundNormal = Vector3.up;
 
+	[Header("Running")]
+	public float runSpeed = 10f;
 
 	[Header("Sliding")]
     public float _slideVelocity;
@@ -104,10 +106,14 @@ public class PlayerMovement : MonoBehaviour
 
 
  private void MovePlayer()
-{
-//Time.fixedDeltaTime = 0.005f;
+{	
     // Movement direction
     Vector3 moveVector = transform.TransformDirection(_playerMovementInput) * moveSpeed;
+
+		if (Input.GetKey(KeyCode.LeftShift))
+	{
+    	moveVector *= runSpeed;
+	}
 
     if (_isSliding)
     {
