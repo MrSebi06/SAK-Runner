@@ -25,7 +25,15 @@ public class PlayerLives : MonoBehaviour
         if (lives <= 0)
         {
             // Player is out of lives, game over
-            Debug.Log("Game Over!");
+            // Get a reference to the Text component of the game over canvas
+Text gameOverText = GameObject.Find("GameOverCanvas/GameOverText").GetComponent<Text>();
+
+// Set the text of the game over message
+gameOverText.text = "Game Over!";
+
+// Set the game over canvas to be active
+GameObject.Find("GameOverCanvas").SetActive(true);
+
         }
     }
 
