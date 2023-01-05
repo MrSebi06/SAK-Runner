@@ -546,15 +546,10 @@ MonoBehaviour:
   groundDrag: 8
   jumpForce: 5
   airMultiplier: 0.7
-  state: 0
-  wallrunning: 0
-  walking: 0
-  jumping: 0
   playerHeight: 2
   groundLayer:
     serializedVersion: 2
     m_Bits: 128
-  _isGrounded: 0
 --- !u!114 &535362940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -569,40 +564,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lives: 3
   livesText: {fileID: 419946420}
---- !u!114 &535362942
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 535362930}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 917b426b37fb3364bbf931b9977b4f50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 708001788}
-  fov: 90
-  wallrun_fov: 110
-  wallrun_fov_time: 10
-  cam_tilt: 20
-  cam_tilt_time: 20
-  tilt: 0
-  walljumpforce_hor: 7
-  walljumpforce_ver: 12
-  Wall_Dist: 1
-  Wallrun_check: 0
-  min_jump: 0
-  Wallrun_Velocity: 200
-  gravity_force: 10
-  Wallrun_Time: 2
-  exit_time: 0.7
-  gravity: 1
-  jump: 32
-  wall:
-    serializedVersion: 2
-    m_Bits: 8
-  _transform: {fileID: 708001791}
 --- !u!1001 &670766472
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -757,11 +718,6 @@ Transform:
 --- !u!20 &708001788 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 8356323206641196644, guid: 6ce794b997fbe964d913fd610eef6ae1, type: 3}
-  m_PrefabInstance: {fileID: 2118978732}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &708001791 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8356323206641196643, guid: 6ce794b997fbe964d913fd610eef6ae1, type: 3}
   m_PrefabInstance: {fileID: 2118978732}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &871826953
@@ -958,7 +914,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1727478498705037905, guid: d2fd06e3c278d404585093542841c91d, type: 3}
       propertyPath: m_LocalScale.x
-      value: 12
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1727478498705037905, guid: d2fd06e3c278d404585093542841c91d, type: 3}
       propertyPath: m_LocalScale.y
@@ -970,7 +926,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1727478498705037905, guid: d2fd06e3c278d404585093542841c91d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.05
+      value: -3.25
       objectReference: {fileID: 0}
     - target: {fileID: 1727478498705037905, guid: d2fd06e3c278d404585093542841c91d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1393,40 +1349,8 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 8356323206641196642, guid: 6ce794b997fbe964d913fd610eef6ae1, type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 708001788}
-    - target: {fileID: 8356323206641196642, guid: 6ce794b997fbe964d913fd610eef6ae1, type: 3}
-      propertyPath: fov
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 8356323206641196642, guid: 6ce794b997fbe964d913fd610eef6ae1, type: 3}
-      propertyPath: _wallRun
-      value: 
-      objectReference: {fileID: 535362942}
-    - target: {fileID: 8356323206641196642, guid: 6ce794b997fbe964d913fd610eef6ae1, type: 3}
       propertyPath: sensitivity
       value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 8356323206641196642, guid: 6ce794b997fbe964d913fd610eef6ae1, type: 3}
-      propertyPath: wallrun_fov
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 8356323206641196642, guid: 6ce794b997fbe964d913fd610eef6ae1, type: 3}
-      propertyPath: wallrun_fov_time
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8356323206641196644, guid: 6ce794b997fbe964d913fd610eef6ae1, type: 3}
-      propertyPath: field of view
-      value: 60.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8356323206641196644, guid: 6ce794b997fbe964d913fd610eef6ae1, type: 3}
-      propertyPath: near clip plane
-      value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 8356323206641196644, guid: 6ce794b997fbe964d913fd610eef6ae1, type: 3}
-      propertyPath: m_projectionMatrixMode
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8356323206673118001, guid: 6ce794b997fbe964d913fd610eef6ae1, type: 3}
       propertyPath: m_Enabled
