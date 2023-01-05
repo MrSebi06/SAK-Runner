@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff9b375c-cab0-4ea9-9bb5-09ae23242c5e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.SAK Runner/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.SAK Runner/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Ennemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Ennemy.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/FIrstPersonPlayer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/FIrstPersonPlayer.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ennemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Ennemy.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +74,7 @@
       <workItem from="1671985309167" duration="2361000" />
       <workItem from="1672243300701" duration="8503000" />
       <workItem from="1672912894649" duration="811000" />
+      <workItem from="1672958723637" duration="399000" />
     </task>
     <servers />
   </component>

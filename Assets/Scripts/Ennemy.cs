@@ -12,16 +12,11 @@ public class Ennemy : MonoBehaviour
     void Start()
     {
         InvokeRepeating("SpawnBullet", 1.0f, bulletRate);
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-        _playerVisible = Physics.Raycast(transform.position, transform.forward, 20, ignored);
-        Debug.DrawRay(transform.position, transform.forward * 20, Color.cyan); 
-        
         transform.rotation = Quaternion.LookRotation((player.position - transform.position).normalized);
     }
 
