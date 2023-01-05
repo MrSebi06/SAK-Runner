@@ -6,7 +6,7 @@ public class Ennemy : MonoBehaviour
     public Rigidbody bullet;
     public float bulletRate;
 
-    private LayerMask ignored
+    private LayerMask ignored;
     private bool _playerVisible;
 
     void Start()
@@ -19,9 +19,8 @@ public class Ennemy : MonoBehaviour
     void Update()
     {
         
-        _playerVisible = Physics.Raycast(transform.position, transform.forward, 20, bulletLayer);
+        _playerVisible = Physics.Raycast(transform.position, transform.forward, 20, ignored);
         Debug.DrawRay(transform.position, transform.forward * 20, Color.cyan); 
-        Debug.Log("Player hit : " + _playerVisible);
         
         transform.rotation = Quaternion.LookRotation((player.position - transform.position).normalized);
     }
