@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerLives : MonoBehaviour
@@ -20,20 +21,10 @@ public class PlayerLives : MonoBehaviour
     {
         lives--;
         UpdateLivesDisplay();
-
-        // Check if the player has any lives left
         if (lives <= 0)
         {
-            // Player is out of lives, game over
-            // Get a reference to the Text component of the game over canvas
-Text gameOverText = GameObject.Find("GameOverCanvas/GameOverText").GetComponent<Text>();
-
-// Set the text of the game over message
-gameOverText.text = "Game Over!";
-
-// Set the game over canvas to be active
-GameObject.Find("GameOverCanvas").SetActive(true);
-
+            Cursor.lockState = CursorLockMode.None;
+            SceneManager.LoadScene("GameOver");
         }
     }
 

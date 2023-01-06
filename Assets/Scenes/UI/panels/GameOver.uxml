@@ -1,0 +1,11 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Scenes/UI/Style/button.uss?fileID=7433441132597879392&amp;guid=a13e2909d1ae1f345876e2671fb5f75c&amp;type=3#button" />
+    <Style src="project://database/Assets/Scenes/UI/Style/Labels.uss?fileID=7433441132597879392&amp;guid=8c577982304b1d249930259803453ee0&amp;type=3#Labels" />
+    <ui:VisualElement name="background" style="flex-direction: row; flex-grow: 1; background-image: url(&apos;project://database/Assets/Scenes/UI/Background/229367bfd5ea803910fa4c9b6fb46f8cbfe67fa3.jpeg?fileID=2800000&amp;guid=0e3341b852976c341a175e380bf3219d&amp;type=3#229367bfd5ea803910fa4c9b6fb46f8cbfe67fa3&apos;);">
+        <ui:VisualElement name="sidebar" style="flex-direction: column; width: 30%; background-color: rgb(38, 19, 30);">
+            <ui:Label text="GAME OVER" display-tooltip-when-elided="true" name="GAMEOVER" class="label-main-title" style="-unity-text-align: middle-left; color: rgba(178, 161, 194, 255); justify-content: flex-start; margin-left: 89px; margin-right: 89px; margin-top: 89px; margin-bottom: 89px;" />
+            <ui:Button text="restart" display-tooltip-when-elided="true" name="restart" class="button-main-title" style="margin-left: 48px; margin-right: 48px; margin-top: 48px; margin-bottom: 48px;" />
+            <ui:Button text="mainmenu" display-tooltip-when-elided="true" name="mainmenu" class="button-main-title" style="margin-left: 54px; margin-right: 54px; margin-top: 54px; margin-bottom: 54px;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,0 +1,11 @@
+.label-main-title {
+    background-color: rgb(38, 19, 30);
+    color: rgb(140, 53, 173);
+    -unity-text-outline-color: rgb(255, 244, 251);
+    -unity-font-style: bold;
+    font-size: 41px;
+    margin-left: 14px;
+    margin-right: 14px;
+    margin-top: 14px;
+    margin-bottom: 14px;
+}

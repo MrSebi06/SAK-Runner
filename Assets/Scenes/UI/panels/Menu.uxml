@@ -1,0 +1,11 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Scenes/UI/Style/Labels.uss?fileID=7433441132597879392&amp;guid=8c577982304b1d249930259803453ee0&amp;type=3#Labels" />
+    <Style src="project://database/Assets/Scenes/UI/Style/button.uss?fileID=7433441132597879392&amp;guid=a13e2909d1ae1f345876e2671fb5f75c&amp;type=3#button" />
+    <ui:VisualElement name="Background" style="flex-grow: 1; background-image: url(&apos;project://database/Assets/Scenes/UI/Background/229367bfd5ea803910fa4c9b6fb46f8cbfe67fa3.jpeg?fileID=2800000&amp;guid=0e3341b852976c341a175e380bf3219d&amp;type=3#229367bfd5ea803910fa4c9b6fb46f8cbfe67fa3&apos;); -unity-background-scale-mode: stretch-to-fill; flex-direction: row; justify-content: flex-start; align-items: stretch; flex-wrap: nowrap;">
+        <ui:VisualElement name="SideBar" style="width: 30%; background-color: rgb(38, 19, 30); justify-content: center;">
+            <ui:Label text="SAK-runner" display-tooltip-when-elided="true" name="title" class="label-main-title" style="color: rgba(235, 207, 245, 255);" />
+            <ui:Button text="Start" display-tooltip-when-elided="true" name="start" class="button-main-title" />
+            <ui:Button text="Quit" display-tooltip-when-elided="true" name="quit" class="button-main-title" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
