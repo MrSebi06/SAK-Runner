@@ -1,4 +1,5 @@
 
+using System;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -13,7 +14,8 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Sliding")]
     public float _slideVelocity;
-	private bool _isSliding;	
+    public float slidingJumpMult = 2.0f;
+	private bool _isSliding;
 
     [Header("Movement")] 
     public float moveSpeed;
@@ -60,7 +62,7 @@ public class PlayerMovement : MonoBehaviour
         _readyToJump = true;
     }
 
-   if (Input.GetKey(KeyCode.LeftControl))
+   if (Input.GetKey(KeyCode.A))
     {
         _isSliding = true;
     }
@@ -150,16 +152,8 @@ public class PlayerMovement : MonoBehaviour
     playerBody.velocity = new Vector3(moveVector.x, playerBody.velocity.y, moveVector.z);
 }
 
-
-
-
-
-
-    private void Jump()
+ private void Jump()
     {
-        // Reset y velocity
-        playerBody.velocity = new Vector3(playerBody.velocity.x, jumpForce, playerBody.velocity.z);
-        
-        // playerBody.AddForce(Vector3.up * jumpForce, ForceMode.VelocityChange);
+        playerBody.velocity = new Vector3(playerBody.velocity.x, jumpForce * (slidingJumpMult * Convert.ToInt32(_isSliding)), playerBody.velocity.z);
     }
 }
