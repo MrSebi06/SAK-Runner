@@ -154,6 +154,6 @@ public class PlayerMovement : MonoBehaviour
 
  private void Jump()
     {
-        playerBody.velocity = new Vector3(playerBody.velocity.x, jumpForce * (slidingJumpMult * Convert.ToInt32(_isSliding)), playerBody.velocity.z);
+        playerBody.velocity = new Vector3(playerBody.velocity.x, jumpForce * (Convert.ToInt32(_isSliding) + 1), playerBody.velocity.z);
     }
 }
