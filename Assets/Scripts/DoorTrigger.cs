@@ -8,7 +8,6 @@ public class DoorTrigger : MonoBehaviour
     {
         if (other.GetComponentInParent<Rigidbody>())
         {
-            Debug.Log("Open !");
             if (!door.isOpen)
             {
                 door.Open();
@@ -20,7 +19,6 @@ public class DoorTrigger : MonoBehaviour
     {
         if (other.GetComponentInParent<Rigidbody>())
         {
-            Debug.Log("Close !");
             if (door.isOpen)
             {
                 door.Close();

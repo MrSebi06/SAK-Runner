@@ -48,9 +48,7 @@ GameObject.Find("GameOverCanvas").SetActive(true);
 
     // Updates the lives display to reflect the current number of lives
     private void UpdateLivesDisplay()
-    {
-		Debug.Log("Updating lives display with value: " + lives);
-
+    { 
         string livesString = "";
         for (int i = 0; i < lives; i++)
         {
@@ -69,12 +67,6 @@ GameObject.Find("GameOverCanvas").SetActive(true);
 
             // Decrease the number of lives by 1
             playerLives.TakeDamage();
-        }
-        
-        if (other != null && other.gameObject.layer == respawnLayer)
-        {
-            Debug.Log("Respawn");
-            transform.position = new Vector3(0.5f, 13f, 0.5f);
         }
     }
 }
