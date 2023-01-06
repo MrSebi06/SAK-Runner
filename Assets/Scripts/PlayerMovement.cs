@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
 	 // The normal of the ground the player is currently on
 	public Vector3 groundNormal = Vector3.up;
 
-	[Header("Running")]
+    [Header("Running")]
 	public float runSpeed = 10f;
 
 	[Header("Sliding")]
@@ -71,8 +71,7 @@ public class PlayerMovement : MonoBehaviour
 
 }
 
-
-    private void FixedUpdate()
+   private void FixedUpdate()
 {
     // Ground check
     // _isGrounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, groundLayer);
@@ -103,9 +102,7 @@ public class PlayerMovement : MonoBehaviour
         _readyToJump = false;
     }
 }
-
-
- private void MovePlayer()
+   private void MovePlayer()
 {	
     // Movement direction
     Vector3 moveVector = transform.TransformDirection(_playerMovementInput) * moveSpeed;

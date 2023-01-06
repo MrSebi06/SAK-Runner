@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,6 +8,7 @@ public class PlayerLives : MonoBehaviour
 {
     public int lives = 3;
     public Text livesText;
+    public LayerMask respawnLayer;
 
 
 	void Start()
@@ -67,6 +69,12 @@ GameObject.Find("GameOverCanvas").SetActive(true);
 
             // Decrease the number of lives by 1
             playerLives.TakeDamage();
+        }
+        
+        if (other != null && other.gameObject.layer == respawnLayer)
+        {
+            Debug.Log("Respawn");
+            transform.position = new Vector3(0.5f, 13f, 0.5f);
         }
     }
 }
