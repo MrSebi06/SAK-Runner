@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
 	[Header("Running")]
 	public float runSpeed = 10f;
 
-	[Header("Sliding")]
+    [Header("Sliding")]
     public float _slideVelocity;
 	private bool _isSliding;	
 
@@ -110,7 +110,7 @@ public class PlayerMovement : MonoBehaviour
     // Movement direction
     Vector3 moveVector = transform.TransformDirection(_playerMovementInput) * moveSpeed;
 
-		if (Input.GetKey(KeyCode.LeftShift))
+		if (Input.GetKey(KeyCode.LeftShift) && (wallrunning || _isGrounded))
 	{
     	moveVector *= runSpeed;
 	}
