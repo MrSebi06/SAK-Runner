@@ -7,7 +7,6 @@
       <change beforePath="$PROJECT_DIR$/Assets/Materials/New Material.mat.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/lvl3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/lvl3.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerLives.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerLives.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
@@ -79,7 +78,7 @@
       <workItem from="1672243300701" duration="8503000" />
       <workItem from="1672912894649" duration="811000" />
       <workItem from="1672958723637" duration="399000" />
-      <workItem from="1672975380431" duration="1074000" />
+      <workItem from="1672975380431" duration="1823000" />
     </task>
     <servers />
   </component>
